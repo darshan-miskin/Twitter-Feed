@@ -2,7 +2,8 @@
 <resources>
     <dimen name="card_margin">4dp</dimen>
     <dimen name="card_corner_radius">15dp</dimen>
-    <dimen name="padding_text">4dp</dimen>
+    <dimen name="text_padding">4dp</dimen>
+    <dimen name="img_padding">4dp</dimen>
     <dimen name="img_corner_radius">6dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="text_size_title">18sp</dimen>

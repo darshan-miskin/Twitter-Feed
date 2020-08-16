@@ -21,6 +21,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="1px"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".5"/>
+
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/img_user"
                 android:layout_width="50dp"
@@ -50,34 +58,64 @@
                 android:layout_height="wrap_content"
                 android:text="@{tweet.text}"
                 tools:text="Sample text"
-                android:paddingTop="@dimen/padding_text"
-                android:paddingBottom="@dimen/padding_text"
+                android:paddingTop="@dimen/text_padding"
+                android:paddingBottom="@dimen/text_padding"
                 app:layout_constraintTop_toBottomOf="@id/img_user"
                 app:layout_constraintBottom_toTopOf="@id/txt_retweet"
                 app:layout_constraintLeft_toLeftOf="parent"/>
 
+            <ImageView
+                android:id="@+id/img_retweet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_refresh_gray_24dp"
+                android:gravity="center"
+                app:layout_constraintHorizontal_bias=".55"
+                app:layout_constraintTop_toBottomOf="@id/txt_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/guideline"/>
+
+            <ImageView
+                android:id="@+id/img_favourite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_favorite_gray_24dp"
+                android:gravity="center"
+                app:layout_constraintHorizontal_bias=".45"
+                app:layout_constraintLeft_toRightOf="@id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/txt_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
             <TextView
                 android:id="@+id/txt_retweet"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{Long.toString(tweet.retweetCount)}"
-                android:gravity="center"
-                android:padding="@dimen/padding_text"
-                app:drawableStartCompat="@drawable/ic_refresh_gray_24dp"
-                app:layout_constraintTop_toBottomOf="@id/txt_text"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/txt_favourite"/>
+                android:gravity="left"
+                android:padding="@dimen/text_padding"
+                android:maxLines="1"
+                android:lines="1"
+                android:ellipsize="end"
+                app:layout_constraintHorizontal_bias=".1"
+                app:layout_constraintTop_toTopOf="@id/img_retweet"
+                app:layout_constraintBottom_toBottomOf="@id/img_retweet"
+                app:layout_constraintLeft_toRightOf="@id/img_retweet"
+                app:layout_constraintRight_toLeftOf="@id/guideline"/>
             <TextView
                 android:id="@+id/txt_favourite"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@{Long.toString(tweet.favoriteCount)}"
-                android:gravity="center"
-                android:padding="@dimen/padding_text"
-                app:drawableStartCompat="@drawable/ic_favorite_gray_24dp"
-                app:layout_constraintTop_toBottomOf="@id/txt_text"
+                android:gravity="left"
+                android:padding="@dimen/text_padding"
+                android:maxLines="1"
+                android:lines="1"
+                android:ellipsize="end"
+                app:layout_constraintTop_toTopOf="@id/img_favourite"
+                app:layout_constraintBottom_toBottomOf="@id/img_favourite"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/txt_retweet"/>
+                app:layout_constraintLeft_toRightOf="@id/img_favourite"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>
