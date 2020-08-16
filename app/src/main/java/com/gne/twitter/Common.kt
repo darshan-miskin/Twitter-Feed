@@ -12,38 +12,38 @@ const val KEY_NAME = "my_name"
 const val KEY_TOKEN = "my_token"
 const val KEY_LOGIN_STATUS = "my_login_status"
 
-fun saveSharedPref(context: Context, key: String?, value: String?) {
+fun saveSharedPref(context: Context, key: String, value: String) {
     val sharedPreferences = context.applicationContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
     val editor = sharedPreferences.edit()
     editor.putString(key, value)
     editor.apply()
 }
 
-fun saveSharedPref(context: Context, key: String?, value: Long) {
+fun saveSharedPref(context: Context, key: String, value: Long) {
     val sharedPreferences = context.applicationContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
     val editor = sharedPreferences.edit()
     editor.putLong(key, value)
     editor.apply()
 }
 
-fun saveSharedPref(context: Context, key: String?, value: Boolean) {
+fun saveSharedPref(context: Context, key: String, value: Boolean) {
     val sharedPreferences = context.applicationContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
     val editor = sharedPreferences.edit()
     editor.putBoolean(key, value)
     editor.apply()
 }
 
-fun getSharedPref(context: Context, key: String?): String? {
+fun getSharedPref(context: Context, key: String): String? {
     val sharedPreferences = context.applicationContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
     return sharedPreferences.getString(key, "-1")
 }
 
-fun getSharedPrefLong(context: Context, key: String?): Long {
+fun getSharedPrefLong(context: Context, key: String): Long {
     val sharedPreferences = context.applicationContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
     return sharedPreferences.getLong(key, -1)
 }
 
-fun getSharedPrefBool(context: Context, key: String?): Boolean {
+fun getSharedPrefBool(context: Context, key: String): Boolean {
     val sharedPreferences = context.applicationContext.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
     return sharedPreferences.getBoolean(key, false)
 }
