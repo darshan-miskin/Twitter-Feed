@@ -20,7 +20,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp">
+            android:layout_margin="10dp">
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/img_user"
                 android:layout_width="50dp"
@@ -54,8 +54,7 @@
                 android:paddingBottom="@dimen/padding_text"
                 app:layout_constraintTop_toBottomOf="@id/img_user"
                 app:layout_constraintBottom_toTopOf="@id/txt_retweet"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                app:layout_constraintLeft_toLeftOf="parent"/>
 
             <TextView
                 android:id="@+id/txt_retweet"
